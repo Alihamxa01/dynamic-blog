@@ -1,101 +1,55 @@
-import Image from "next/image";
+import Layout from './components/Layout'
+import BlogCard from './components/BlogCard'
+import Slider from './Component/Slider/Slider'
+import Slider2 from'./Component/Slider2/Slider2'
+import Slider3 from './Component/Slider3/Slider3'
+
+const blogPosts = [
+  { id: 1, title: "The Future of AI",
+     description: "Artificial Intelligence (AI) is rapidly evolving and its impact on various industries is becoming increasingly significant. From healthcare to finance, AI is revolutionizing the way we work and live.",
+      imageUrl: "/11.jpeg" },
+
+  { id: 2, title: "5G Technology ",
+     description: "5G technology represents the next generation of wireless connectivity, promising faster speeds, lower latency, and greater capacity for connected devices. With the rollout of 5G networks globally, industries are on the brink of transformative changes, from enhanced mobile experiences to advanced IoT deployments. Unlike previous generations of wireless technology.",
+     imageUrl: "/b.jpeg" 
+    },
+
+  { id: 3, title: "Crisis In Pakistan", description: "The political and economic landscape in Pakistan has been grappling with multiple crises,", imageUrl: "/c.jpg" },
+ 
+  { id: 4, title: "Syrian Collapse",
+     description: "The fall of Syria’s government has been a complex and prolonged crisis, marked by years of conflict, political instability, and humanitarian suffering. ", imageUrl: "/d.jpeg" },
+ 
+  { id: 5, title: "The Palestinian Issue", description: "The Palestinian issue is deeply rooted in history, dating back to the early 20th century when competing national movements and colonial powers ", imageUrl: "/e.jpeg" },
+ 
+  { id: 7, title: "Parachinar Conflict", description: "Parachinar, the capital of Kurram District in Pakistan's Khyber Pakhtunkhwa province,", imageUrl: "/f1.jpeg" },
+ 
+
+  { id: 6, title: "Champion Trophy-2025", description: "The ICC Champion Trophy is one of the most prestigious cricket tournaments in the world, ", imageUrl: "/g.jpg" },
+ 
+
+  { id: 8, title: " The Rise of Social Media", description: "The rise of social media has revolutionized the way people interact, share information, ", imageUrl: "/h.webp" },
+]
+  
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <Layout>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+      <h1 className=" border-purple-500  text-xl sm:text-4xl font-bold mb-8 text-center text-purple-300 mt-10 ">Explore the Latest Updates and Discover Something New!</h1>
+
+      
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {blogPosts.map((post) => (
+          <BlogCard key={post.id} {...post} />
+        ))}
+      </div>
+      <div className="flex flex-col md:flex-col lg:flex-row justify-center items-center sm:justify-center gap-28 pace-x-5">
+<Slider/>
+<Slider2/>
+<Slider3/>
+
+</div>
+    </Layout>
+  )
 }
+
