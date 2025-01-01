@@ -36,9 +36,7 @@ content: "The Palestinian issue is deeply rooted in history, dating back to the 
      imageUrl: "/h1.jpg" },
 
  
-  // ... add more blog posts here
 ]
-
 export default function BlogPostPage({ params }: { params: { id: string } }) {
   const post = blogPosts.find(p => p.id === parseInt(params.id))
 
@@ -53,4 +51,3 @@ export default function BlogPostPage({ params }: { params: { id: string } }) {
     </Layout>
   )
 }
-

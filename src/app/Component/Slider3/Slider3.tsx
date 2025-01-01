@@ -15,7 +15,7 @@ export default function Home() {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % Images.length);
-    }, 3000); // Change slide every 3 seconds
+    }, 2000); 
 
     return () => clearInterval(interval);
   }, []);
