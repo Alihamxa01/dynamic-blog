@@ -1,9 +1,9 @@
-import Image from 'next/image';
+import Image from 'next/image'
 
 interface BlogPostProps {
-  title: string;
-  content: string;
-  imageUrl: string;
+  title: string
+  content: string
+  imageUrl: string
 }
 
 export default function BlogPost({ title, content, imageUrl }: BlogPostProps) {
@@ -19,5 +19,6 @@ export default function BlogPost({ title, content, imageUrl }: BlogPostProps) {
         </div>
       </div>
     </article>
-  );
+  )
 }
+
