@@ -3,7 +3,6 @@
 import Layout from  "@/app/components/Layout"
 import BlogPost from '@/app/components/BlogPost'
 import CommentBox from  '@/app/components/CommentBox'
-type params = Promise<{id :string}>
 
 
 const blogPosts = [
