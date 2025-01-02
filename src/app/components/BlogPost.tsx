@@ -1,6 +1,7 @@
 import Image from 'next/image'
 
 interface BlogPostProps {
+  id:number
   title: string
   content: string
   imageUrl: string

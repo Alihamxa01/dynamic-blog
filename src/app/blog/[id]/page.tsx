@@ -3,8 +3,6 @@
 import Layout from  "@/app/components/Layout"
 import BlogPost from '@/app/components/BlogPost'
 import CommentBox from  '@/app/components/CommentBox'
-type Params = Promise<{ id: string }>
-
 
 const blogPosts = [
   { id: 1, title: "The Future of AI",
@@ -44,12 +42,11 @@ content: "The Palestinian issue is deeply rooted in history, dating back to the 
 ]
 
 
-
 export default function BlogPostPage({ params }: { params: { id: string } }) {
-  const post = blogPosts.find(p => p.id === parseInt(params.id));
+  const post = blogPosts.find(p => p.id === parseInt(params.id))
 
   if (!post) {
-    return <div>Post not found</div>;
+    return <div>Post not found</div>
   }
 
   return (
@@ -57,7 +54,7 @@ export default function BlogPostPage({ params }: { params: { id: string } }) {
       <BlogPost {...post} />
       <CommentBox />
     </Layout>
-  );
+  )
 }
 
 
