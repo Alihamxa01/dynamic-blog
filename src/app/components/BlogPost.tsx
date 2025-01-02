@@ -7,6 +7,12 @@ interface BlogPostProps {
   imageUrl: string
 }
 
+// interface BlogPostProps {
+//   params: Promise<{
+//     _id: string;
+//   }>;
+// }
+
 export default function BlogPost({ title, content, imageUrl }: BlogPostProps) {
   return (
     <article className="bg-gray-800 rounded-lg overflow-hidden shadow-lg">
