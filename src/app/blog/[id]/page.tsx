@@ -57,12 +57,6 @@ export default function BlogPostPage({ params }: { params: { id: string } }) {
     </Layout>
   )
 }
-interface BlogPostPageProps {
-  params: {
-    id: string;
-  };
-}
-
 // export default function BlogPostPage({ params }: BlogPostProp) {
 //   const post = blogPosts.find(p => p.id === parseInt(params.id));
 
