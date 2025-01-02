@@ -1,7 +1,11 @@
+"use client"
+
 import Layout from  "@/app/components/Layout"
 import BlogPost from '@/app/components/BlogPost'
 import CommentBox from  '@/app/components/CommentBox'
 type params = Promise<{id :string}>
+
+
 const blogPosts = [
   { id: 1, title: "The Future of AI",
     content: "Artificial Intelligence (AI) is rapidly evolving and its impact on various industries is becoming increasingly significant. From healthcare to finance, AI is revolutionizing the way we work and live.\n\nOne of the most exciting areas of AI development is machine learning, which allows systems to improve their performance without being explicitly programmed. This has led to breakthroughs in areas such as natural language processing, computer vision, and predictive analytics.\n\nAs AI continues to advance, we can expect to see more personalized and efficient services in our daily lives. However, this rapid progress also raises important ethical questions about privacy, job displacement, and the role of AI in decision-making processes.\n\nIt is crucial for society to engage in ongoing discussions about the responsible development and deployment of AI technologies. By doing so, we can harness the potential of AI while mitigating its risks, ensuring a future where technology enhances human capabilities rather than replacing them",
@@ -41,17 +45,29 @@ content: "The Palestinian issue is deeply rooted in history, dating back to the 
 
 
 
-export default function BlogPostPage({ params }: { params: { id: string } }) {
-  const post = blogPosts.find(p => p.id === parseInt(params.id))
+// export default function BlogPostPage({ params }: { params: { id: string } }) {
+//   const post = blogPosts.find(p => p.id === parseInt(params.id));
 
-  if (!post) {
-    return <div>Post not found</div>
-  }
+//   if (!post) {
+//     return <div>Post not found</div>;
+//   }
+
+//   return (
+//     <Layout>
+//       <BlogPost {...post} />
+//       <CommentBox />
+//     </Layout>
+//   );
+// }
+
+
+export default function BlogPostPage({ params }: { params: { id: string } }) {
+  const post = blogPosts.find(p => p.id === parseInt(params.id));
 
   return (
     <Layout>
-      <BlogPost {...post} />
+      {post ? <BlogPost {...post} /> : null}
       <CommentBox />
     </Layout>
-  )
+  );
 }
