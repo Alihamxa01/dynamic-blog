@@ -20,7 +20,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       </main>
       <footer className="bg-purple-900 p-4 mt-8">
         <div className="container mx-auto text-center text-purple-300">
-          © 2023 Dynamic Blog. All rights reserved.<br/>
+          © 2024-2025 Dynamic Blog. All rights reserved.<br/>
          <span className=" opacity-75">|| CREATION  BY ALI HAMZA ||</span>
         </div>
       </footer>
