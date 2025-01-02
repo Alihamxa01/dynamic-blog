@@ -3,7 +3,6 @@
 import Layout from  "@/app/components/Layout"
 import BlogPost from '@/app/components/BlogPost'
 import CommentBox from  '@/app/components/CommentBox'
-type BlogPostProps =  any
 
 
 
@@ -44,31 +43,11 @@ content: "The Palestinian issue is deeply rooted in history, dating back to the 
  
      ]
 
-// export default function BlogPostPage({ params }: { params: { id: string } }) {
-//   const post = blogPosts.find(p => p.id === parseInt(params.id))
-
-//   if (!post) {
-//     return <div>Post not found</div>
-//   }
-
-//   return (
-//     <Layout>
-//       <BlogPost {...post} />
-//       <CommentBox />
-//     </Layout>
-//   )
-// }
-// interface BlogPostPageProps {
-//   params: {
-//     id: string;
-//   };
-// }
-
-export default function BlogPostPage({ params }: BlogPostProps) {
-  const post = blogPosts.find(p => p.id === parseInt(params.id));
+export default function BlogPostPage({ params }: { params: { id: string } }) {
+  const post = blogPosts.find(p => p.id === parseInt(params.id))
 
   if (!post) {
-    return <div>Post not found</div>;
+    return <div>Post not found</div>
   }
 
   return (
@@ -76,5 +55,25 @@ export default function BlogPostPage({ params }: BlogPostProps) {
       <BlogPost {...post} />
       <CommentBox />
     </Layout>
-  );
+  )
 }
+interface BlogPostPageProps {
+  params: {
+    id: string;
+  };
+}
+
+// export default function BlogPostPage({ params }: BlogPostProp) {
+//   const post = blogPosts.find(p => p.id === parseInt(params.id));
+
+//   if (!post) {
+//     return <div>Post not found</div>;
+//   }
+
+//   return (
+//     <Layout>
+//       <BlogPost {...post} />
+//       <CommentBox />
+//     </Layout>
+//   );
+// }
