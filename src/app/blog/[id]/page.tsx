@@ -55,37 +55,8 @@ content: "The Palestinian issue is deeply rooted in history, dating back to the 
 //   )
 // }
 
-
-// export default function BlogPostPage({ params }: { params: { id: string } }) {
-//   if (!params?.id || isNaN(parseInt(params.id, 10))) {
-//     return <div>Invalid post ID</div>;
-//   }
-
-//   const post = blogPosts.find((p) => p.id === parseInt(params.id, 10));
-
-//   if (!post) {
-//     return <div>Post not found</div>;
-//   }
-
-//   return (
-//     <Layout>
-//       <BlogPost {...post} />
-//       <CommentBox />
-//     </Layout>
-//   );
-// }
-
-
-
-
-
-
 export default function BlogPostPage({ params }: { params: { id: string } }) {
-  if (!params?.id || isNaN(parseInt(params.id, 10))) {
-    return <div>Invalid post ID</div>;
-  }
-
-  const post = blogPosts.find((p) => p.id === parseInt(params.id, 10));
+  const post = blogPosts.find(p => p.id === parseInt(params.id));
 
   if (!post) {
     return <div>Post not found</div>;
